@@ -1,5 +1,6 @@
 <template>
-  <div class="home">
+  <div class="home" >
+    <button @click="toggleFullPage">全屏</button>
     <gua-second :second="second" />
     <gua-minute :minute="minute" />
     <gua-hour :hour="hour" />
@@ -18,6 +19,7 @@ import GuaApm from '@/components/apm'
 import GuaWeek from '@/components/week'
 import GuaDay from '@/components/day'
 import GuaMonth from '@/components/month'
+import screenFull from 'screenfull'
 
 export default {
   name: 'Home',
@@ -45,6 +47,13 @@ export default {
     this.initApp()
   },
   methods: {
+    toggleFullPage() {
+      if (!screenFull.enabled) {
+        console.log('why')
+        return
+      }
+      screenFull.toggle()
+    },
     initApp() {
       setInterval(() => {
         let thisMoment = new Date()

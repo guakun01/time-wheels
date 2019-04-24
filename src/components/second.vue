@@ -16,7 +16,7 @@ export default {
     },
     secondStyles() {
       return {
-        // transform: `rotate(${-(this.second * 6)}deg)`
+        transform: `rotate(${-(this.second * 6)}deg)`
       }
     }
   }

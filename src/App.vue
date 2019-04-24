@@ -1,19 +1,24 @@
 <template>
   <div class="home">
     <gua-second :second="second" />
+    <gua-minute :minute="minute" />
   </div>
 </template>
 
 <script>
 import GuaSecond from '@/components/second'
+import GuaMinute from '@/components/minute'
+
 export default {
   name: 'Home',
   components: {
     GuaSecond,
+    GuaMinute,
   },
   data() {
     return {
       second: '',
+      minute: '',
     }
   },
   created() {
@@ -24,7 +29,8 @@ export default {
       setInterval(() => {
         let thisMoment = new Date()
         this.second = thisMoment.getSeconds()
-        console.log('这一秒: ', this.second, ' ')
+        this.minute = thisMoment.getMinutes()
+        console.log('这一秒: ', this.second, ' ', this.minute)
       }, 1000)
     }
   }

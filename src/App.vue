@@ -4,9 +4,9 @@
     <gua-minute :minute="minute" />
     <gua-hour :hour="hour" />
     <gua-apm :apm="apm" />
-    <gua-week :apm="week" />
-    <gua-day :apm="day" />
-    <gua-month :apm="month" />
+    <gua-week :week="week" />
+    <gua-day :day="day" />
+    <gua-month :month="month" />
   </div>
 </template>
 

@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss" scoped>
   ul {
-    z-index: 3;
+    z-index: 2;
     @for $i from 1 through 31 {
       li:nth-child(#{$i}) {
         transform: rotate(#{$i * 11.6129deg}) translateX(120px);

@@ -54,6 +54,7 @@ export default {
         this.apm = this.hour > 12 ? 2 : 1
         this.week = thisMoment.getDay()
         this.day = thisMoment.getDate()
+        this.month = thisMoment.getMonth() + 1
       }, 1000)
     }
   }

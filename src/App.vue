@@ -2,23 +2,43 @@
   <div class="home">
     <gua-second :second="second" />
     <gua-minute :minute="minute" />
+    <gua-hour :hour="hour" />
+    <gua-apm :apm="apm" />
+    <gua-week :apm="week" />
+    <gua-day :apm="day" />
+    <gua-month :apm="month" />
   </div>
 </template>
 
 <script>
 import GuaSecond from '@/components/second'
 import GuaMinute from '@/components/minute'
+import GuaHour from '@/components/hour'
+import GuaApm from '@/components/apm'
+import GuaWeek from '@/components/week'
+import GuaDay from '@/components/day'
+import GuaMonth from '@/components/month'
 
 export default {
   name: 'Home',
   components: {
     GuaSecond,
     GuaMinute,
+    GuaHour,
+    GuaApm,
+    GuaWeek,
+    GuaDay,
+    GuaMonth,
   },
   data() {
     return {
       second: '',
       minute: '',
+      hour: '',
+      apm: '',
+      week: '',
+      day: '',
+      month: '',
     }
   },
   created() {
@@ -30,7 +50,10 @@ export default {
         let thisMoment = new Date()
         this.second = thisMoment.getSeconds()
         this.minute = thisMoment.getMinutes()
-        console.log('这一秒: ', this.second, ' ', this.minute)
+        this.hour = thisMoment.getHours()
+        this.apm = this.hour > 12 ? 2 : 1
+        this.week = thisMoment.getDay()
+        this.day = thisMoment.getDate()
       }, 1000)
     }
   }

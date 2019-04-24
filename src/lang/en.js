@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default {
   second: [
     "00",
